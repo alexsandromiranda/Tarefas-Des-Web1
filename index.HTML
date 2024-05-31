@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        .resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <label for="valor1">Valor 1:</label>
+        <input type="number" id="valor1" name="valor1" required>
+        <label for="valor2">Valor 2:</label>
+        <input type="number" id="valor2" name="valor2" required>
+        <button type="button" id="calcular">Calcular</button>
+    </form>
+    <script>
+        document.getElementById('calcular').addEventListener('click', function() {
+            var valor1 = parseFloat(document.getElementById('valor1').value);
+            var valor2 = parseFloat(document.getElementById('valor2').value);
+            var resultado = valor1 + valor2;
+
+            // Adicionar elemento HTML com o resultado
+            var resultadoDiv = document.createElement('div');
+            resultadoDiv.className = 'resultado';
+            resultadoDiv.textContent = 'Resultado: ' + resultado;
+            document.body.appendChild(resultadoDiv);
+
+            // Apagar a classe CSS (se necessário, aqui só demonstrando)
+            resultadoDiv.classList.remove('resultado');
+        });
+    </script>
+</body>
+</html>
